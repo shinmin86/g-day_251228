@@ -1,0 +1,4 @@
+/* Placeholder CSS. Replace with the original myBirthday.css for full design. */
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,sans-serif;}
+.invitationMain,.greeting,.schedule,.timeLine,.gallery,.location,.guestBook,.account,.attendance,.share{padding:16px;}
+img{max-width:100%;height:auto;}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,21 +15,22 @@
       href="https://hangeul.pstatic.net/hangeul_static/css/NanumHimNaeRaNeunMarBoDan.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://g-day.co.kr/kr/test/css/myBirthday.css" />
+    <link rel="stylesheet" href="css/myBirthday.css" />
 
     <title>G-DAY</title>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   
   </head>
 
-  <body class="loading">
+  <!-- Static export: server-side 기능(방명록/참석등록 등)은 동작하지 않을 수 있습니다. -->
+<body class="loading">
     <!-- 배경음악 -->
     <div class="backGroundMusic" id="musicToggle">
       <div class="bgmIcon">
-        <img src="https://g-day.co.kr/kr/test/src/common/musicPlayBtn.png" id="musicIcon" />
+        <img src="src/common/musicPlayBtn.png" id="musicIcon" />
         <audio
           id="audioOne"
-          src="https://g-day.co.kr/kr/test/src/music/02 - The Story (Instrumental).mp3"
+          src="src/music/02 - The Story (Instrumental).mp3"
           preload="auto"
           autoplay
         ></audio>
@@ -38,7 +40,7 @@
     <!-- 메인 -->
     <div class="invitationMain">
       <div class="mainCover">
-        <img src="https://g-day.co.kr/kr/test/src/myBirthday/mainBG.png" />
+        <img src="src/myBirthday/mainBG.png" />
       </div>
       <div class="mainPhoto">
         <img src="" />
@@ -64,7 +66,7 @@
         <p>지데이의 첫번째 생일에 초대합니다.</p>
       </div>
       <div class="greetingPhoto">
-        <img src="https://g-day.co.kr/kr/test/src/myBirthday/greetingPhoto.png" />
+        <img src="src/myBirthday/greetingPhoto.png" />
       </div>
       <div class="greetingText">
         <p class="greetingBodyContent">
@@ -80,7 +82,7 @@
         </div>
       </div>
       <div class="callBtn">
-        <!-- <button><img src="https://g-day.co.kr/kr/test/src/myBirthday/callBtn.png" /></button> -->
+        <!-- <button><img src="src/myBirthday/callBtn.png" /></button> -->
         <button id="callBtnCall">연락하기</button>
       </div>
     </div>
@@ -89,7 +91,7 @@
     <div class="callBtnModalOverlay" id="callBtnModalOverlay">
       <div class="callBtnModal">
         <div class="momAndDadCallDeleteBtn">
-          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
+          <img src="src/common/guestBookWriteDelete.png" />
         </div>
         <div class="momAndDadCall">
           <div class="momCallInformation">
@@ -161,7 +163,7 @@
 
         <div class="timeLineItem left"  style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/myBirthday/timeLine01.png" />
+            <img src="src/myBirthday/timeLine01.png" />
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -177,13 +179,13 @@
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/myBirthday/timeLine02.png" />
+            <img src="src/myBirthday/timeLine02.png" />
           </div>
         </div>
         
         <div class="timeLineItem left" style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+            <img src="src/star/timeLine01.png" id="photo1"/>
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -199,13 +201,13 @@
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+            <img src="src/star/timeLine02.png" id="photo2"/>
           </div>
         </div>
 
         <div class="timeLineItem left" style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+            <img src="src/star/timeLine01.png" id="photo1"/>
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -221,13 +223,13 @@
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+            <img src="src/star/timeLine02.png" id="photo2"/>
           </div>
         </div>
 
         <div class="timeLineItem left" style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+            <img src="src/star/timeLine01.png" id="photo1"/>
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -243,13 +245,13 @@
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+            <img src="src/star/timeLine02.png" id="photo2"/>
           </div>
         </div>
     
         <div class="timeLineItem left" style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+            <img src="src/star/timeLine01.png" id="photo1"/>
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -265,13 +267,13 @@
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+            <img src="src/star/timeLine02.png" id="photo2"/>
           </div>
         </div>
 
         <div class="timeLineItem left" style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+            <img src="src/star/timeLine01.png" id="photo1"/>
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -287,13 +289,13 @@
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+            <img src="src/star/timeLine02.png" id="photo2"/>
           </div>
         </div>
 
         <div class="timeLineItem left" style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+            <img src="src/star/timeLine01.png" id="photo1"/>
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -309,13 +311,13 @@
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+            <img src="src/star/timeLine02.png" id="photo2"/>
           </div>
         </div>
 
         <div class="timeLineItem left" style="display: none;">
           <div class="timeLinePhoto">
-            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+            <img src="src/star/timeLine01.png" id="photo1"/>
           </div>
           <div class="timeLineDot"></div>
           <div class="timeLinetext">
@@ -333,40 +335,40 @@
       </div>
       <ul class="galleryPhotos">
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos01.png" data-index="0" />
+          <img src="src/myBirthday/galleryPhotos01.png" data-index="0" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos02.png" data-index="1" />
+          <img src="src/myBirthday/galleryPhotos02.png" data-index="1" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos03.png" data-index="2" />
+          <img src="src/myBirthday/galleryPhotos03.png" data-index="2" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos04.png" data-index="3" />
+          <img src="src/myBirthday/galleryPhotos04.png" data-index="3" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos05.png" data-index="4" />
+          <img src="src/myBirthday/galleryPhotos05.png" data-index="4" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos06.png" data-index="5" />
+          <img src="src/myBirthday/galleryPhotos06.png" data-index="5" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos04.png" data-index="3" />
+          <img src="src/myBirthday/galleryPhotos04.png" data-index="3" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos05.png" data-index="4" />
+          <img src="src/myBirthday/galleryPhotos05.png" data-index="4" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos06.png" data-index="5" />
+          <img src="src/myBirthday/galleryPhotos06.png" data-index="5" />
         </li>
                 <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos04.png" data-index="3" />
+          <img src="src/myBirthday/galleryPhotos04.png" data-index="3" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos05.png" data-index="4" />
+          <img src="src/myBirthday/galleryPhotos05.png" data-index="4" />
         </li>
         <li>
-          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos06.png" data-index="5" />
+          <img src="src/myBirthday/galleryPhotos06.png" data-index="5" />
         </li>
       </ul>
 
@@ -391,9 +393,9 @@
 
       <div class="locationBtn">
         <ul class="locationBtnApp">
-          <li><img src="https://g-day.co.kr/kr/test/src/common/naverMap.png" onclick="openNaverMap()"/> 지도</li>
-          <li><img src="https://g-day.co.kr/kr/test/src/common/kakaomap.png" onclick="openKakaoMap()"/> 카카오 맵</li>
-          <li><img src="https://g-day.co.kr/kr/test/src/common/tMAp.png" onclick="openTmap()"/> 티맵</li>
+          <li><img src="src/common/naverMap.png" onclick="openNaverMap()"/> 지도</li>
+          <li><img src="src/common/kakaomap.png" onclick="openKakaoMap()"/> 카카오 맵</li>
+          <li><img src="src/common/tMAp.png" onclick="openTmap()"/> 티맵</li>
         </ul>
       </div>
       <div class="locationDetail">
@@ -430,8 +432,8 @@
         </div>
         <div class="guestBookContentBtn">
           <ul class="guestBookContentBtnList">
-            <li><img src="https://g-day.co.kr/kr/test/src/common/editBtn.png" /></li>
-            <li><img src="https://g-day.co.kr/kr/test/src/common/deleteBtn.png" /></li>
+            <li><img src="src/common/editBtn.png" /></li>
+            <li><img src="src/common/deleteBtn.png" /></li>
           </ul>
         </div>
       </div>
@@ -445,7 +447,7 @@
     <div id="guestBookAllModal" class="guestBookAllModal" style="display: none">
       <div class="guestBookAllModalContent">
         <div class="guestBookAllModalCloseBtn">
-          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
+          <img src="src/common/guestBookWriteDelete.png" />
         </div>
         <div class="guestBookAllContentsContainer">
           <!-- 여기에 모든 guestBookContent 복사해서 보여줌 -->
@@ -457,7 +459,7 @@
     <div class="guestBookModalOverlay" id="guestBookModalOverlay">
       <div class="guestBookWrite" id="guestBookWrite">
         <div class="guestBookDeleteBtn">
-          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
+          <img src="src/common/guestBookWriteDelete.png" />
         </div>
         <div class="guestBookWriteCotents">
           <div class="guestBookWriter">
@@ -513,7 +515,7 @@
           </div>
         </div>
         <div class="openAndClose">
-          <button><img src="https://g-day.co.kr/kr/test/src/common/accountArrow.png" /></button>
+          <button><img src="src/common/accountArrow.png" /></button>
         </div>
       </div>
       <div class="accountContent">
@@ -528,7 +530,7 @@
           </div>
         </div>
         <div class="openAndClose">
-          <button><img src="https://g-day.co.kr/kr/test/src/common/accountArrow.png" /></button>
+          <button><img src="src/common/accountArrow.png" /></button>
         </div>
       </div>
     </div>
@@ -551,7 +553,7 @@
     <div class="attendanceModalOverlay" id="attendanceModalOverlay">
       <div class="attendanceModal">
         <div class="attendanceModalCloseBtn">
-          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
+          <img src="src/common/guestBookWriteDelete.png" />
         </div>
         <div class="attendanceModalContents">
           <p class="attendanceModalTitle">참석 여부를 알려주세요.</p>
@@ -636,19 +638,19 @@
     <div class="share">
       <div class="shareBtn" id="copyLinkBtn">
         <div class="shareBtnCircle">
-          <img src="https://g-day.co.kr/kr/test/src/common/linkShareBtn.png" />
+          <img src="src/common/linkShareBtn.png" />
         </div>
         <div class="shareBtnText">링크 복사</div>
       </div>
       <div class="shareBtn" id="kakaoShareBtn">
         <div class="shareBtnCircle">
-          <img src="https://g-day.co.kr/kr/test/src/common/kakaoShareBtn.png" />
+          <img src="src/common/kakaoShareBtn.png" />
         </div>
         <div class="shareBtnText">카카오톡 공유</div>
       </div>
     </div>
 
-    <script src="https://g-day.co.kr/kr/test/js/mobileInvitation.js?id=226"></script>
+    <script src="js/mobileInvitation.js"></script>
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5c75410e0e94618049d381d090a204bf&amp;libraries=services"
