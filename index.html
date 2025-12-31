@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>초대장</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+
+    <section class="hero">
+      <div class="hero__bg" style="background-image:url('./assets/hero.jpg')"></div>
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">첫 생일에 초대합니다</h1>
+        <p class="hero__desc">
+          소중한 날, 함께 축하해 주세요.
+        </p>
+        <p class="hero__hosts">아빠 홍길동 · 엄마 김철수</p>
+        <button class="btn btn--primary" id="btnContacts">연락하기</button>
+      </div>
+    </section>
+
+    <div class="modal" id="contactsModal" aria-hidden="true">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__panel">
+        <div class="modal__header">
+          <h2>연락하기</h2>
+          <button class="iconbtn" data-close aria-label="닫기">×</button>
+        </div>
+
+        <div class="contactCard">
+          <div>
+            <div class="contactCard__label">아빠</div>
+            <div class="contactCard__name">홍길동</div>
+          </div>
+          <a class="btn btn--ghost" id="dadCall" href="#">전화</a>
+        </div>
+
+        <div class="contactCard">
+          <div>
+            <div class="contactCard__label">엄마</div>
+            <div class="contactCard__name">김철수</div>
+          </div>
+          <a class="btn btn--ghost" id="momCall" href="#">전화</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">행사 안내</h2>
+      <div class="card">
+        <div class="kv">
+          <div class="kv__row">
+            <div class="kv__k">일시</div>
+            <div class="kv__v">2026.01.10 (토) 오후 12:00</div>
+          </div>
+          <div class="kv__row">
+            <div class="kv__k">장소</div>
+            <div class="kv__v">○○파티홀</div>
+          </div>
+          <div class="kv__row">
+            <div class="kv__k">주소</div>
+            <div class="kv__v">서울 ○○구 ○○로 00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">갤러리</h2>
+      <div class="galleryGrid" id="galleryGrid"></div>
+    </section>
+
+    <div class="viewer" id="viewer" aria-hidden="true">
+      <div class="viewer__backdrop" data-close></div>
+      <div class="viewer__panel">
+        <button class="iconbtn viewer__close" data-close aria-label="닫기">×</button>
+        <button class="navbtn navbtn--prev" id="prevBtn" aria-label="이전">❮</button>
+        <img class="viewer__img" id="viewerImg" alt="">
+        <button class="navbtn navbtn--next" id="nextBtn" aria-label="다음">❯</button>
+        <div class="viewer__counter"><span id="viewerIndex">1</span> / <span id="viewerTotal">1</span></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">오시는 길</h2>
+      <div class="card">
+        <p class="muted">아래 버튼으로 지도 앱을 열 수 있습니다.</p>
+        <div class="rowButtons">
+          <a class="btn btn--ghost" target="_blank" rel="noopener"
+             href="https://map.kakao.com/">카카오맵</a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener"
+             href="https://www.tmap.co.kr/">티맵</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">마음 전하실 곳</h2>
+      <div class="card accountCard">
+        <div>
+          <div class="accountCard__label">계좌</div>
+          <div class="accountCard__num" id="acc1">국민 000-0000-0000 (홍길동)</div>
+        </div>
+        <button class="btn btn--ghost" data-copy="#acc1">복사</button>
+      </div>
+    </section>
+
+    <section class="sharebar">
+      <button class="btn btn--ghost" id="btnCopyLink">링크 복사</button>
+    </section>
+
+    <footer class="footer">© Invitation</footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
