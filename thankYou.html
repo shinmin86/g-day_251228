@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Thank You</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/common.css">
 </head>
-<body>
-  <main class="card">
-    <section class="content">
-      <h1>감사합니다</h1>
-      <p class="message">
-        소중한 선택에 진심으로 감사드립니다.<br />
-        앞으로 더 좋은 경험으로 보답하겠습니다.
-      </p>
-      <div class="meta">
-        <span id="cardType"></span>
-        <span id="cardIndex"></span>
-      </div>
-      <button class="btn" onclick="copyLink()">링크 복사</button>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Thank You Card</p>
-  </footer>
-  <script src="./js/script.js"></script>
+
+<body class="page-center" data-page="thankyou">
+
+  <div class="card">
+    <h1>감사합니다</h1>
+
+    <p class="message">
+      소중한 선택에 진심으로 감사드립니다.<br>
+      더 나은 경험으로 보답하겠습니다.
+    </p>
+
+    <div class="meta">
+      <span id="cardType"></span>
+      <span id="cardIndex"></span>
+    </div>
+
+    <button class="btn" onclick="copyLink()">링크 복사</button>
+  </div>
+
+  <script src="./js/common.js"></script>
 </body>
 </html>
