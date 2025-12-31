@@ -1,0 +1,1434 @@
+/* 폰트 */
+@font-face {
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PyeongChang-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "S-CoreDream-3Light", "Apple SD Gothic Neo", "Noto Sans KR",
+    sans-serif;
+}
+
+html {
+}
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  letter-spacing: 0px;
+  color: #404040;
+}
+
+body {
+  max-width: 580px;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: white;
+}
+
+/* 배경음악 */
+.backGroundMusic {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.bgmIcon img {
+  width: 26px;
+  height: 26px;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.bgmIcon img.paused {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+/* 메인 구멍 안 뚫린 버전 */
+.invitationMain {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 580 / 1125;
+  margin: 0 auto;
+}
+
+.mainCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.mainCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mainPhoto {
+  position: absolute;
+  width: 67.2%;
+  max-width: 390px;
+  top: 23.4%;
+  left: 50%;
+  clip-path: polygon(
+    4.39% 4.23%,
+    0.46% 14.96%,
+    5.46% 25.75%,
+    4.33% 30.19%,
+    4.33% 79.08%,
+    1.13% 85.8%,
+    7.54% 95.07%,
+    24% 97.4%,
+    33.97% 95.18%,
+    43.93% 99.95%,
+    66.69% 96.8%,
+    76.07% 99.3%,
+    85.7% 97.4%,
+    91.41% 92.68%,
+    93.11% 89.72%,
+    97.9% 95.93%,
+    99.93% 71.33%,
+    94.23% 55.93%,
+    98.49% 25.26%,
+    94.23% 12.2%,
+    95.02% 0.54%,
+    79.93% 3.85%,
+    68.92% 0.54%,
+    39.02% 2.33%,
+    22.23% 0.05%
+  );
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.mainPhoto img {
+  width: 100%;
+  display: block;
+}
+
+.mainText {
+  position: absolute;
+  width: 100%;
+  top: 72%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  height: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.babyName {
+  font-size: clamp(40px, 4vw, 45px);
+  font-weight: 700;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+  margin-top: 0;
+  margin-bottom: 1vh;
+  display: inline-block;
+  color: #0056cd;
+  font-weight: bold;
+}
+
+.date {
+  margin-top: 0;
+  margin-bottom: 1vh;
+
+  width: 100%;
+}
+
+.date span {
+  font-size: clamp(18px, 2.8vw, 27px);
+}
+
+.placeName {
+  font-size: clamp(16px, 2.3vw, 22px);
+  margin-top: 0;
+  margin-bottom: 1vh;
+}
+
+.hallName {
+  font-size: clamp(12px, 1.9vw, 18px);
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 1vh;
+}
+
+.parentsName {
+  font-size: clamp(18px, 2.4vw, 24px);
+  text-align: center;
+  width: 100%;
+}
+
+/* 인사말 */
+.greeting {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  /* aspect-ratio: 580 / 1125; */
+  margin: 150px auto;
+}
+
+.greetingTitle {
+  font-size: clamp(22px, 2.3vw, 28px);
+  text-align: center;
+}
+
+.greetingTitle p {
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.greetingPhoto {
+  width: 100%;
+  margin: 4vh auto;
+}
+
+.greetingPhoto img {
+  width: 100%;
+}
+
+.greetingText {
+  margin: 4vh auto;
+  width: 70%;
+}
+
+.greetingBodyContent {
+  font-size: clamp(14px, 1.9vw, 19px);
+  padding: 0;
+  line-height: 25px;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.hyphen {
+  margin: 2vh auto;
+}
+
+.hyphen hr {
+  width: 5%;
+  height: 2px;
+  margin: 2rem auto;
+  border: none;
+  background: #0056cd;
+  border-radius: 2px;
+}
+
+.parentsNameTwo {
+  font-size: clamp(24px, 2.4vw, 29px);
+  text-align: center;
+  width: 100%;
+}
+
+.parentsNameTwo span {
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.callBtn {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.callBtn button {
+  width: 90%;
+  max-width: 340px;
+  height: 64px;
+  border-radius: 15px;
+  border-style: none;
+  background-color: #0056cd;
+  color: white;
+  font-size: clamp(24px, 2.5vw, 30px);
+  font-weight: bold;
+}
+
+/* 연락하기 모달 */
+.callBtnModalOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInOverlay 0.3s ease-out;
+}
+
+.callBtnModal {
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  width: 85%;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  position: relative;
+  z-index: 1001;
+  animation: slideUpFadeIn 0.4s ease-out;
+}
+
+.momAndDadCallDeleteBtn {
+  position: absolute;
+  top: -35px;
+  right: 15px;
+  background-color: transparent;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.momAndDadCallDeleteBtn img {
+  width: 21px;
+  height: 21px;
+}
+
+.momAndDadCall {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.momCallInformation {
+  display: flex;
+}
+
+.momOrDad {
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  font-size: clamp(12px, 1.4vw, 16px);
+}
+
+.momoOrDadName {
+  flex: 1;
+  display: inline-flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+  font-size: clamp(14px, 1.9vw, 19px);
+}
+
+.CallNumber {
+  flex: 3;
+  display: inline-flex;
+  justify-content: flex-end;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.CallNumber button {
+  width: 50%;
+  height: 50%;
+  font-size: clamp(12px, 1.4vw, 16px);
+  color: #404040;
+  border-radius: 6px;
+  border: none;
+  background-color: #d9d9d9;
+}
+
+/* 돌잔치 일정 */
+.schedule {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin: 200px auto;
+  text-align: center;
+}
+
+.scheduleTitle p {
+  font-size: clamp(24px, 2.4vw, 29px);
+  padding-bottom: 2vh;
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.date {
+  font-size: clamp(14px, 1.9vw, 19px);
+}
+
+.placeNameTwo {
+  font-size: clamp(14px, 1.9vw, 19px);
+}
+
+.scheduleCalendar {
+  margin: 4vh auto;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+#calendarHeader {
+  text-align: center;
+  font-size: clamp(30px, 3vw, 35px);
+  margin-bottom: 3vh;
+  font-weight: bold;
+}
+
+.calendarDays {
+  margin-bottom: 2vh;
+}
+
+.calendarDays,
+.calendarDates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: clamp(14px, 1.9vw, 19px);
+}
+
+.calendarDays .day,
+.calendarDates .calendarDate {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day {
+  color: #404040;
+}
+
+.day.red {
+  color: #ff0000;
+}
+
+.calendarDate.red {
+  color: #ff0000;
+}
+
+.calendarDate.empty {
+  visibility: hidden;
+}
+
+.calendarDate.highlight .circle-highlight {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #0056cd;
+  /* ↑바꿀거 */
+  color: white;
+}
+
+.dDay {
+  font-size: clamp(20px, 2.4vw, 25px);
+}
+
+.dDay p,
+.dDay span {
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+/* 성장일기 */
+.timeLine {
+  width: 80%;
+  margin: 150px auto;
+  /* padding: 2rem 0; */
+  max-width: 580px;
+  /* aspect-ratio: 580 / 1125; */
+}
+
+.timeLineTitle {
+  text-align: center;
+  font-size: clamp(20px, 2.5vw, 24px);
+}
+
+.timeLineTitle p {
+  font-size: clamp(24px, 2.4vw, 29px);
+  padding-bottom: 3vh;
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.timeLineContainer {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  position: relative;
+}
+
+.timeLineLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #404040;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeLineItem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem auto;
+  z-index: 1;
+  min-height: 150px;
+}
+
+.timeLinetextTitle {
+  width: 100px;
+}
+
+.timeLineItem.left .timeLinePhoto {
+  margin-right: auto;
+  text-align: left;
+}
+
+.timeLineItem.left .timeLinePhoto img {
+}
+
+.timeLineItem.left .timeLinetext {
+  margin-left: auto;
+  text-align: left;
+}
+
+.timeLineItem.right .timeLinetext {
+  margin-right: auto;
+  text-align: left;
+}
+
+.timeLineItem.right .timeLinePhoto {
+  margin-left: auto;
+  text-align: right;
+}
+
+.timeLinePhoto img {
+  width: 100%;
+  max-width: 119px;
+}
+
+.timeLinetext .timeLinetextDate {
+  font-size: clamp(10px, 1.5vw, 15px);
+  color: #777;
+}
+.timeLinetext .timeLinetextTitle {
+  font-size: clamp(14px, 1.9vw, 19px);
+  font-weight: bold;
+}
+
+.timeLineDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: #0056cd;
+  /* ↑바꿀거 */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* 갤러리 */
+.gallery {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 580px;
+  /* aspect-ratio: 580 / 1125; */
+  margin: 150px auto;
+}
+
+.galleryTitle {
+  text-align: center;
+  font-size: clamp(24px, 2.4vw, 29px);
+  padding-bottom: 3vh;
+}
+
+.galleryTitle p {
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.galleryPhotos {
+  display: grid;
+  max-width: 325px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  justify-items: center;
+}
+
+.galleryPhotos li img {
+  max-width: 100%;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.imageModal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.imageModal.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.modalImageWrapper {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.modalImageWrapper img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: clamp(20px, 2.5vw, 24px);
+  color: #404040;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 48%;
+  font-size: clamp(20px, 2.5vw, 24px);
+  color: #404040;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.imageCounter {
+  position: absolute;
+  bottom: 30px;
+  font-size: clamp(14px, 1.9vw, 19px);
+  color: #404040;
+}
+
+/* 오시는길 */
+.location {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 580px;
+  /* aspect-ratio: 580 / 1125; */
+  margin: 150px auto;
+}
+
+.locationTitle {
+  text-align: center;
+  font-size: clamp(24px, 2.4vw, 29px);
+  padding-bottom: 3vh;
+}
+
+.locationTitle p {
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+#map {
+}
+
+.locationBtn {
+  margin: 0;
+  width: 100%;
+  background-color: #eeeeee;
+  font-size: clamp(10px, 1.5vw, 15px);
+}
+
+.locationBtnApp {
+  width: 100%;
+  height: 35px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.locationBtnApp li {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #817b7b;
+  gap: 6px;
+}
+
+.locationBtnApp li img {
+  width: 18px;
+}
+
+.locationDetail {
+  margin-top: 5vh;
+}
+
+.locationDetail pre {
+  width: 95%;
+  margin: 0 auto;
+  /* ↑바꿀거 */
+  text-align: left;
+  font-size: clamp(14px, 1.9vw, 19px);
+  white-space: pre-wrap;
+}
+
+/* 방명록 */
+.guestBook {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 580px;
+  /* aspect-ratio: 580 / 1125; */
+  margin: 150px auto;
+}
+
+.guestBookTitle {
+  text-align: center;
+  font-size: clamp(24px, 2.4vw, 29px);
+  padding-bottom: 3vh;
+}
+
+.guestBookTitle p {
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.guestBookContent {
+  display: none;
+  width: 85%;
+  background-color: #f8f8f8;
+  margin: 1vh auto;
+  margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 22px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.guestBookContent.show-initial {
+  display: block;
+}
+
+.guestBookContentText {
+  margin-left: 3vh;
+  width: 65%;
+}
+
+.guestBookContentTextfrom {
+  margin-top: 2vh;
+  font-size: clamp(10px, 1.5vw, 15px);
+}
+
+.guestBookContentTextfromWhoText {
+  margin-top: 0;
+  font-size: clamp(14px, 1.9vw, 19px);
+}
+
+.guestBookContentBtn {
+  margin-top: -1.5vh;
+}
+
+.guestBookContentBtnList {
+  list-style: none;
+  display: flex;
+  margin-top: 0;
+  margin-right: 2vh;
+}
+
+.guestBookContentBtnList li {
+  margin-left: 0;
+  margin-right: 0.5vh;
+}
+
+.guestBookContentBtnList li img {
+  width: 9px;
+}
+
+.guestBookBtn {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 4vh auto;
+  margin-top: 6vh;
+}
+
+.guestBookBtn button {
+  width: 223px;
+  height: 45px;
+  border-radius: 15px;
+  font-size: clamp(18px, 2.5vw, 24px);
+  /* ↑바꿀거 */
+}
+
+.guestBookBtnWrite {
+  margin-right: 5px;
+  position: relative;
+  /* padding: 10px 24px; */
+  background: white;
+  color: #333;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 0;
+  overflow: hidden;
+  background: #0056cd;
+  /* ↑바꿀거 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.guestBookBtnWrite::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  background: #0056cd;
+  /* ↑바꿀거 */
+  border-radius: 15px;
+  z-index: -1;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.guestBookBtnMore {
+  margin-left: 5px;
+  background: #0056cd;
+  border-style: none;
+  color: white;
+}
+
+/* 방명록 전체보기 */
+.guestBookAllModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.guestBookAllModalContent {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.guestBookAllModalCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.guestBookAllModalCloseBtn img {
+  width: 21px;
+  height: 21px;
+}
+
+.guestBookAllContentsContainer {
+  margin-top: 50px;
+  overflow-y: auto;
+  padding: 10px 20px;
+  flex-grow: 1;
+}
+
+/* 방명록 작성하기 */
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.guestBookModalOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInOverlay 0.3s ease-out;
+}
+
+.guestBookWrite {
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  width: 90%;
+  height: 492px;
+  border-radius: 22px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding-top: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1001;
+  animation: slideUpFadeIn 0.4s ease-out;
+}
+
+.guestBookWriteCotents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: clamp(10px, 1.4vh, 14px);
+}
+
+.guestBookWriteCotents input {
+  max-width: 345px;
+  height: 37px;
+  border-radius: 6px;
+  border: 1px solid #989898;
+  padding-left: 10px;
+}
+
+.guestBookWriteCotents textarea {
+  max-width: 345px;
+  height: 228px;
+  border-radius: 6px;
+  border: 1px solid #989898;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.guestBookWriter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guestBookPassword {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guestBookbody {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guestBookWriteBtn {
+  margin-top: 3vh;
+}
+
+.guestBookWriteBtn button {
+  width: 91px;
+  height: 28px;
+  background: #d9d9d9;
+  border-radius: 6px;
+  border-style: none;
+  color: #404040;
+}
+
+.guestBookWriter p,
+.guestBookPassword p,
+.guestBookbody p {
+  /* flex: 1; */
+  width: 20%;
+  min-width: 60px;
+}
+
+.guestBookWriter input,
+.guestBookPassword input,
+.guestBookbody textarea {
+  /* flex: 5; */
+  width: 75%;
+}
+
+.guestBookWriter,
+.guestBookPassword,
+.guestBookbody {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.guestBookDeleteBtn {
+  position: absolute;
+  top: -35px;
+  right: 15px;
+  background-color: transparent;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.guestBookDeleteBtn img {
+  width: 21px;
+  height: 21px;
+}
+
+/* 계좌번호 */
+.account {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 580px;
+  /* aspect-ratio: 580 / 1125; */
+  margin: 150px auto;
+}
+
+.accountTitle {
+  text-align: center;
+  font-size: clamp(24px, 2.4vw, 29px);
+  padding-bottom: 3vh;
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.accountTitle p {
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.accountText {
+  width: 70%;
+  margin: 0 auto;
+  font-size: clamp(14px, 1.9vw, 19px);
+  text-align: center;
+  line-height: 25px;
+  padding-bottom: 3vh;
+  white-space: pre-wrap;
+}
+
+.accountContent {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  border-radius: 22px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  margin-bottom: 3vh;
+}
+
+.accountContentText {
+  flex: 3;
+  padding: 10px 20px 20px 30px;
+}
+
+.accountContentTextWho {
+  font-size: clamp(14px, 1.7vw, 18px);
+  margin-bottom: 30px;
+}
+
+.accountContentTextName {
+  font-size: clamp(12px, 1.4vw, 16px);
+}
+
+.accountContentTextNumber {
+  font-size: clamp(12px, 1.4vw, 16px);
+}
+
+.accountContentBtn {
+  width: 165px;
+  height: 30px;
+  text-align: center;
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 7px;
+  color: #404040;
+}
+
+.openAndClose {
+  margin-top: 18px;
+  margin-right: 20px;
+}
+
+.openAndClose button {
+  background-color: transparent;
+  border: none;
+}
+
+.openAndClose button img {
+  width: 19px;
+}
+
+.openAndClose img {
+  transition: transform 0.3s ease;
+}
+.openAndClose img.rotate {
+  transform: rotate(-180deg);
+}
+
+.accountContentTextToggle {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.accountContentText.show .accountContentTextToggle {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* 참석여부 */
+.attendance {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 580px;
+  /* aspect-ratio: 580 / 1125; */
+  margin: 150px auto;
+}
+
+.attendanceTitle {
+  text-align: center;
+  font-size: clamp(24px, 2.4vw, 29px);
+  padding-bottom: 3vh;
+}
+
+.attendanceTitle p {
+  font-weight: bold;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+.attendanceText {
+  width: 70%;
+  margin: 0 auto;
+  font-size: clamp(14px, 1.9vw, 19px);
+  text-align: center;
+  line-height: 25px;
+  padding-bottom: 3vh;
+}
+
+.attendanceBtn {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.attendanceBtn button {
+  width: 90%;
+  max-width: 340px;
+  height: 64px;
+  border-radius: 15px;
+  border-style: none;
+  background: #0056cd;
+  /* ↑바꿀거 */
+  color: white;
+  font-size: clamp(24px, 2.5vw, 30px);
+}
+
+/* 참석여부 팝업 */
+.attendanceModalOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInOverlay 0.3s ease-out;
+}
+
+.attendanceModal {
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  width: 85%;
+  height: 680px;
+  border-radius: 22px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding-top: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1001;
+  animation: slideUpFadeIn 0.4s ease-out;
+}
+
+.attendanceModalContents {
+  width: 85%;
+  margin: 20px auto;
+  font-size: clamp(14px, 1.9vw, 19px);
+}
+
+.attendanceModalTitle {
+  font-size: clamp(20px, 2.5vw, 24px);
+}
+
+.momAndDadCheckContainer {
+  display: flex;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.momAndDadCheck {
+  margin-right: 20px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.attendanceModalCheckBox {
+  width: 19px;
+  height: 19px;
+  border-radius: 6px;
+  background-color: transparent;
+  margin-right: 10px;
+  border: 1.5px solid #989898;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background 0.2s;
+}
+
+.attendanceModalCheckBox:checked {
+  background-color: #9ac4c3;
+}
+
+.attendanceModalEntered {
+  width: 100%;
+}
+
+.attendanceModalEnteredList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.attendanceModalEnteredList li {
+  width: 100%;
+  margin-bottom: 13px;
+}
+
+.attendanceModalEnteredListInput {
+  width: 100%;
+  height: 37px;
+  border-radius: 6px;
+  border: 1.5px solid #989898;
+  background-color: transparent;
+  padding-left: 10px;
+}
+
+.attendanceModalEnteredListInput::placeholder {
+  color: #404040;
+}
+
+.attendanceModalEnteredListSelect {
+  width: 100%;
+  height: 37px;
+  border-radius: 6px;
+  border: 1.5px solid #989898;
+  padding-left: 10px;
+  background: url(../src/common/attendanceModalArrow.png) no-repeat 97% 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #404040;
+}
+
+.attendanceModalEnteredListSelect:invalid {
+  color: #404040;
+}
+
+.attendanceModalEnteredListSelect option {
+  width: 100%;
+  color: #404040;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.personalInformation {
+  margin-top: 3vh;
+}
+
+.personalInformationContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  border: 1.5px solid #989898;
+  border-radius: 6px;
+}
+
+.personalInformationCheck {
+  margin-top: 1vh;
+  margin-right: 20px;
+  display: flex;
+  padding: 0;
+  justify-content: left;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.attendanceModalBtn {
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+
+.attendanceModalBtn button {
+  width: 91px;
+  height: 28px;
+  border-radius: 6px;
+  color: #404040;
+  background-color: #d9d9d9;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.attendanceModalCloseBtn {
+  position: absolute;
+  top: -35px;
+  right: 15px;
+  background-color: transparent;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.attendanceModalCloseBtn img {
+  width: 21px;
+  height: 21px;
+}
+
+/* 링크복사 */
+.share {
+  width: 50%;
+  margin: 150px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(12px, 1.4vw, 16px);
+}
+
+.shareBtn {
+  text-align: center;
+  width: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.shareBtnCircle {
+}
+
+.shareBtnCircle img {
+  width: 70px;
+}
+
+.shareBtnText {
+}
+
+/* body.loading::before {
+    content: "로딩중...";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 9999;
+  } */

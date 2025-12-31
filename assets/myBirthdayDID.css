@@ -1,0 +1,141 @@
+/* 폰트 */
+@font-face {
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PyeongChang-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "S-CoreDream-3Light", 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+}
+
+html {
+  background-color: gray;
+}
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  letter-spacing: 0px;
+  color: #404040;
+  overflow-x: hidden;
+}
+
+body {
+  max-width: 1080px;
+  max-height: 1920px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.invitationMain {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  max-height: 1920px;
+  aspect-ratio: 580 / 1125;
+  margin: 0 auto;
+  overflow: hidden;
+    display: flex;
+  justify-content: center;
+}
+
+.mainCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+
+.mainCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: top;
+}
+
+.mainPhoto {
+  position: absolute;
+  width: 665px;
+  top: 450px;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  z-index: 2;
+}
+
+
+.mainPhoto img {
+  width: 100%;
+  display: block;
+}
+
+.mainText {
+  position: absolute;
+  width: 100%;
+  top: 1400px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  height: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.babyName {
+  font-size: 100px;
+  font-weight: 700;
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+  margin-top: 0;
+  margin-bottom: 40px;
+  display: inline-block;
+  color: transparent;
+  color: #0056cd;
+}
+
+.welcome {
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.parentsName {
+  font-size: 70px;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+}
+
+.parentsName span {
+  font-family: "NanumHimNaeRaNeunMarBoDan";
+}
+
+

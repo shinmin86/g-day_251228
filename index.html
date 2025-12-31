@@ -1,24 +1,599 @@
-
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>송서빈 돌잔치 초대장</title>
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<div class="wrap">
-<section class="section">
-<div class="name"></div>
-<div class="meta datetime"></div>
-<div class="meta place"></div>
-<div class="parents"></div>
-</section>
-<section class="section">
-<button class="btn">연락하기</button>
-</section>
-</div>
-<script src="assets/js/app.js"></script>
-</body>
-</html>
+<!-- saved from url=(0071)https://g-day.co.kr/kr/test/html/myBirthday.php?idx=1188969&card_type=G -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <meta property="og:image" content="assets/1763647824408.webp">
+    <meta property="og:title" content="송서빈">
+    <meta property="og:description" content="사랑스런 송서빈의 첫 돌잔치에 초대합니다.">
+    <link href="assets/NanumHimNaeRaNeunMarBoDan.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/myBirthday.css">
+
+    <title>G-DAY</title>
+  <script src="assets/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+  </head>
+
+  <body class="">
+    <!-- 배경음악 -->
+    <div class="backGroundMusic" id="musicToggle">
+      <div class="bgmIcon">
+        <img src="assets/musicPlayBtn.png" id="musicIcon">
+        <audio id="audioOne" src="../src/music/08. Refracting Lights.mp3" preload="auto" autoplay=""></audio>
+      </div>
+    </div>
+
+    <!-- 메인 -->
+    <div class="invitationMain">
+      <div class="mainCover">
+        <img src="assets/mainBG.png">
+      </div>
+      <div class="mainPhoto">
+        <img src="assets/1763647824408.webp">
+      </div>
+      <div class="mainText">
+        <p class="babyName">송서빈</p>
+        <p class="date">
+          <span class="calendar">2025-12-31</span><span class="day"> (수) </span><span class="time">AM11:30</span>
+        </p>
+        <p class="placeName">플로렌스 파티하우스 보라매점</p>
+        <p class="hallName" style="display: none;"></p>
+        <p class="parentsName">
+          <span class="fathter">아빠 송수생</span> <span class="dot1">·</span>
+          <span class="mother">엄마 장혜령</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 인사말 -->
+    
+
+    <!-- 연락하기 모달 -->
+    <div class="callBtnModalOverlay" id="callBtnModalOverlay">
+      <div class="callBtnModal">
+        <div class="momAndDadCallDeleteBtn">
+          <img src="assets/guestBookWriteDelete.png">
+        </div>
+        <div class="momAndDadCall">
+          <div class="momCallInformation">
+            <p class="momOrDad">아빠</p>
+            <p class="momoOrDadName">송수생</p>
+            <div class="CallNumber">
+              <button onclick="makeCall(f_num, &#39;아빠&#39;)">
+                연락하기
+              </button>
+            </div>
+          </div>
+          <div class="momCallInformation">
+            <p class="momOrDad">엄마</p>
+            <p class="momoOrDadName">장혜령</p>
+            <div class="CallNumber">
+              <button onclick="makeCall(m_num, &#39;엄마&#39;)">
+                연락하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 돌잔치 일정 -->
+    <div class="greeting">
+      <div class="greetingTitle">
+        <p>송서빈의 첫번째 생일에 초대합니다.</p>
+      </div>
+      <div class="greetingPhoto" style="display: none;">
+        <img src="assets/1763647674209.webp">
+      </div>
+      <div class="greetingText">
+        <p class="greetingBodyContent">부모라는 이름을 선물하고
+큰 사랑과 감사를 가르쳐준 우리 아이가
+드디어 첫 생일을 맞이하였습니다.
+그동안 사랑을 베풀어 주신 모든 분들께
+감사의 마음을 전하기 위해
+조촐한 자리를 마련하였습니다.
+바쁘시더라도 참석해 주시면
+큰 기쁨이 되겠습니다.</p>
+        <div class="hyphen"><hr></div>
+        <div class="parentsNameTwo">
+          <span class="fathter">아빠 송수생</span> <span class="dot1">·</span>
+          <span class="mother">엄마 장혜령</span>
+        </div>
+      </div>
+      <div class="callBtn">
+        <!-- <button><img src="../src/myBirthday/callBtn.png" /></button> -->
+        <button id="callBtnCall">연락하기</button>
+      </div>
+    </div><div class="schedule">
+      <div class="scheduleTitle">
+        <p>돌잔치 안내</p>
+      </div>
+      <div class="scheduleDate">
+        <p class="date">
+          <span class="calendar">2025-12-31</span>
+          <span class="day"> (수) </span>
+          <span class="time">AM11:30</span>
+        </p>
+        <p class="placeName">플로렌스 파티하우스 보라매점</p>
+        <div class="hyphen"><hr></div>
+      </div>
+      <div class="scheduleCalendar">
+        <div class="scheduleCalendar">
+          <div id="calendarHeader">12월</div>
+          <div class="calendarDays">
+            <div class="day red">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+          </div>
+          <div class="calendarDates" id="calendarDates"><div class="calendarDate empty"></div><div class="calendarDate">1</div><div class="calendarDate">2</div><div class="calendarDate">3</div><div class="calendarDate">4</div><div class="calendarDate">5</div><div class="calendarDate">6</div><div class="calendarDate red">7</div><div class="calendarDate">8</div><div class="calendarDate">9</div><div class="calendarDate">10</div><div class="calendarDate">11</div><div class="calendarDate">12</div><div class="calendarDate">13</div><div class="calendarDate red">14</div><div class="calendarDate">15</div><div class="calendarDate">16</div><div class="calendarDate">17</div><div class="calendarDate">18</div><div class="calendarDate">19</div><div class="calendarDate">20</div><div class="calendarDate red">21</div><div class="calendarDate">22</div><div class="calendarDate">23</div><div class="calendarDate">24</div><div class="calendarDate">25</div><div class="calendarDate">26</div><div class="calendarDate">27</div><div class="calendarDate red">28</div><div class="calendarDate">29</div><div class="calendarDate">30</div><div class="calendarDate highlight"><span class="circle-highlight">31</span></div></div>
+        </div>
+      </div>
+      <div class="dDay">
+        <p>
+          <span id="">송서빈</span><span class="day red">♥</span>의 첫번째 생일이
+          <span id="" class="day red">0일</span> 남았습니다.
+        </p>
+      </div>
+    </div><div class="timeLine">
+      <div class="timeLineTitle">
+        <p>성장일기</p>
+      </div>
+      <div class="timeLineContainer">
+        <div class="timeLineLine"></div>
+
+        <div class="timeLineItem left" style="display: flex;">
+          <div class="timeLinePhoto">
+            <img src="assets/17636476740763.webp">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate">2024-05-19</p>
+            <p class="timeLinetextTitle">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: flex;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate">2024-12-28</p>
+            <p class="timeLinetextTitle">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="assets/17636476741196.webp">
+          </div>
+        </div>
+        
+        <div class="timeLineItem left" style="display: flex;">
+          <div class="timeLinePhoto">
+            <img src="assets/17636476742562.webp" id="photo1">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2025-02-15</p>
+            <p class="timeLinetextTitle" id="subject1">50일</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: flex;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2025-04-06</p>
+            <p class="timeLinetextTitle" id="subject2">100일</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="assets/17636476743489.webp" id="photo2">
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: flex;">
+          <div class="timeLinePhoto">
+            <img src="assets/17636476744618.webp" id="photo1">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2025-07-15</p>
+            <p class="timeLinetextTitle" id="subject1">200일</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine02.png" id="photo2">
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine01.png" id="photo1">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine02.png" id="photo2">
+          </div>
+        </div>
+    
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine01.png" id="photo1">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine02.png" id="photo2">
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine01.png" id="photo1">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine02.png" id="photo2">
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine01.png" id="photo1">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine02.png" id="photo2">
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="assets/timeLine01.png" id="photo1">
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+      </div>
+    </div><div class="gallery">
+      <div class="galleryTitle">
+        <p>갤러리</p>
+      </div>
+      <ul class="galleryPhotos">
+        <li>
+          <img src="assets/17636476740170.webp" data-index="0" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476741130.webp" data-index="1" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476742136.webp" data-index="2" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476743187.webp" data-index="3" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476744846.webp" data-index="4" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476745347.webp" data-index="5" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476746468.webp" data-index="3" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476747798.webp" data-index="4" style="display: block;">
+        </li>
+        <li>
+          <img src="assets/17636476748392.webp" data-index="5" style="display: block;">
+        </li>
+                <li>
+          
+        </li>
+        <li>
+          
+        </li>
+        <li>
+          
+        </li>
+      </ul>
+
+      <div class="imageModal" id="imageModal">
+        <span class="closeBtn" id="closeBtn">×</span>
+        <div class="modalImageWrapper">
+          <img id="modalImage" src="https://g-day.co.kr/kr/test/html/myBirthday.php?idx=1188969&amp;card_type=G">
+        </div>
+        <div class="nav prev" id="prevBtn">❮</div>
+        <div class="nav next" id="nextBtn">❯</div>
+        <div class="imageCounter" id="imageCounter">1 / 3</div>
+      </div>
+    </div><div class="location">
+      <div class="locationTitle">
+        <p>오시는 길</p>
+      </div>
+
+      <div id="map" style="width: 100%; height: 300px; position: relative; overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"><div style="position: absolute; left: 4754px; top: -8247px;"><div style="position: absolute; z-index: 0; display: none;"></div><div style="position: absolute; z-index: 1; left: 0px; top: 0px;"><img src="assets/871.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4790px; top: 8483px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/872.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4534px; top: 8483px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/873.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4278px; top: 8483px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/871(1).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4790px; top: 8227px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/872(1).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4534px; top: 8227px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/873(1).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4278px; top: 8227px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/871(2).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4790px; top: 7971px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/872(2).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4534px; top: 7971px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/873(2).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4278px; top: 7971px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/874.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4022px; top: 8483px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/874(1).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4022px; top: 8227px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="assets/874(2).png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -4022px; top: 7971px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div><div style="position: absolute; z-index: 1;"></div><div style="position: absolute; z-index: 1; width: 580px; height: 300px;"></div><div style="position: absolute; z-index: 1;"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -5914px; top: 7647px; width: 2900px; height: 1500px;" viewBox="0 0 2900 1500"><defs></defs></svg></div><div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);"><div style="position: absolute; margin: -39px 0px 0px -14px; z-index: 0; left: -4464px; top: 8397px;"><img draggable="false" src="assets/marker.png" alt="" role="presentation" title="" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; clip: rect(0px, 29px, 42px, 0px); top: 0px; left: 0px; width: 29px; height: 42px;"><img src="assets/transparent.gif" alt="" role="presentation" draggable="false" usemap="#daum.maps.Marker.Area:1" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; width: 29px; height: 42px;"><map id="daum.maps.Marker.Area:1" name="daum.maps.Marker.Area:1"><area href="javascript:void(0)" alt="" role="presentation" shape="poly" coords="14,39,9,27,4,21,1,16,1,10,4,4,11,0,18,0,25,4,28,10,28,16,25,21,20,27" title="" style="-webkit-tap-highlight-color: transparent;"></map></div><div style="cursor: default; position: absolute; background: rgb(255, 255, 255); border: 1px solid rgb(118, 129, 168); z-index: 0; display: block; width: 182px; height: 29px; left: -4555px; top: 8320px;"><div style="position: absolute; width: 11px; height: 9px; background: url(&quot;https://t1.daumcdn.net/localimg/localimages/07/mapjsapi/triangle.png&quot;) 0% 0% / 11px 9px no-repeat; left: 85px; top: 29px;"></div><div class="" style="position: absolute; left: 0px; top: 0px;"><div style="padding:5px;font-size:14px;">서울 동작구 보라매로5길 15</div></div></div></div></div></div><div style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);"><div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; float: left;"><div style="float: left; margin: 2px 3px 0px 4px; height: 6px; transition: width 0.1s; border-top: none rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); border-left: 2px solid rgb(0, 0, 0); border-image: initial; width: 46px;"></div><div style="float: left; margin: 0px 4px 0px 0px; font-family: AppleSDGothicNeo-Regular, 돋움, dotum, sans-serif; font-weight: bold; color: rgb(0, 0, 0);">50m</div></div><div style="margin: 0px 4px; float: left;"><a target="_blank" href="http://map.kakao.com/" style="float: left; width: 32px; height: 10px;"><img src="assets/m_bi_b.png" alt="Kakao 맵으로 이동(새창열림)" style="float: left; width: 32px; height: 10px; border: none;"></a><div style="font: 11px / 11px Arial, Tahoma, Dotum, sans-serif; float: left;"></div></div></div><div style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div></div>
+
+      <div class="locationBtn">
+        <ul class="locationBtnApp">
+          <li><img src="assets/naverMap.png" onclick="openNaverMap()"> 지도</li>
+          <li><img src="assets/kakaomap.png" onclick="openKakaoMap()"> 카카오 맵</li>
+          <li><img src="assets/tMAp.png" onclick="openTmap()"> 티맵</li>
+        </ul>
+      </div>
+      <div class="locationDetail">
+        <pre>&lt; 행사장 15분 전 입장 가능 &gt;
+※찾아오시는 길※
+<img src="assets/map.jpg" width="100%"></pre>
+      </div>
+    </div><div class="guestBook">
+      <div class="guestBookTitle">
+        <p>생일 축하해!</p>
+      </div>
+      
+      <div class="guestBookBtn">
+        <button class="guestBookBtnWrite">작성하기</button>
+        <button class="guestBookBtnMore">전체보기</button>
+      </div>
+    </div><div class="account" style="display: none;">
+      <div class="accountTitle">마음 전하실 곳</div>
+      <div class="accountText">멀리서도 축하의 마음을
+전하고 싶으신 분들을 위해
+계좌번호를 안내드립니다.
+소중한 축하를 보내주셔서 감사드리며,
+따뜻한 마음에 깊이 감사드립니다.</div>
+      <div class="accountContent">
+        <div class="accountContentText">
+          <p class="accountContentTextWho">아빠 계좌번호</p>
+          <div class="accountContentTextToggle">
+            <p class="accountContentTextName"></p>
+            <p class="accountContentTextNumber" id="accountNumber"> </p>
+            <button class="accountContentBtn">계좌 복사하기</button>
+          </div>
+        </div>
+        <div class="openAndClose">
+          <button><img src="assets/accountArrow.png"></button>
+        </div>
+      </div>
+      <div class="accountContent">
+        <div class="accountContentText">
+          <p class="accountContentTextWho">엄마 계좌번호</p>
+          <div class="accountContentTextToggle">
+            <p class="accountContentTextName"></p>
+            <p class="accountContentTextNumber" id="accountNumber"> </p>
+            <button class="accountContentBtn">계좌 복사하기</button>
+          </div>
+        </div>
+        <div class="openAndClose">
+          <button><img src="assets/accountArrow.png"></button>
+        </div>
+      </div>
+    </div><div class="attendance" style="display: none;">
+      <div class="attendanceTitle">
+        <p>참석 의사 전달</p>
+      </div>
+      <div class="attendanceText">돌잔치에 참석해주시는 모든 분들을
+더욱 특별하게 모시고자 하오니,
+참석 여부 전달을 부탁드립니다.</div>
+      <div class="attendanceBtn">
+        <button class="attendanceBtndelivery">전달하기</button>
+      </div>
+    </div>
+
+    <!-- 성장일기 -->
+    
+
+    <!-- 갤러리 -->
+    
+
+    <!-- 오시는 길 -->
+    
+
+    <!-- 방명록 -->
+    
+
+    <!-- 방명록 전체보기 -->
+    <div id="guestBookAllModal" class="guestBookAllModal" style="display: none">
+      <div class="guestBookAllModalContent">
+        <div class="guestBookAllModalCloseBtn">
+          <img src="assets/guestBookWriteDelete.png">
+        </div>
+        <div class="guestBookAllContentsContainer">
+          <!-- 여기에 모든 guestBookContent 복사해서 보여줌 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 방명록 작성하기 -->
+    <div class="guestBookModalOverlay" id="guestBookModalOverlay">
+      <div class="guestBookWrite" id="guestBookWrite">
+        <div class="guestBookDeleteBtn">
+          <img src="assets/guestBookWriteDelete.png">
+        </div>
+        <div class="guestBookWriteCotents">
+          <div class="guestBookWriter">
+            <p>작성자</p>
+            <input type="hidden" name="msg_idx">
+            <input type="text" name="name" required="">
+          </div>
+          <div class="guestBookPassword">
+            <p>비밀번호</p>
+            <input type="password" name="password" oninput="this.value = this.value.replace(/[^0-9]/g, &#39;&#39;)" maxlength="4" minlength="4" placeholder="숫자 네자리 입력" min="4" max="4" required="">
+          </div>
+          <div class="guestBookbody">
+            <p>내용</p>
+            <textarea name="textarea" rows="10" cols="50" required="" placeholder="이모티콘은 적용이 안됩니다."></textarea>
+          </div>
+          <div class="guestBookWriteBtn">
+            <button>작성하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 방명록 작성하기 -->
+
+    <!-- 계좌번호 -->
+    
+
+    <!-- 참석 여부 -->
+    
+
+    <!-- 참석여부 팝업 -->
+    <div class="attendanceModalOverlay" id="attendanceModalOverlay">
+      <div class="attendanceModal">
+        <div class="attendanceModalCloseBtn">
+          <img src="assets/guestBookWriteDelete.png">
+        </div>
+        <div class="attendanceModalContents">
+          <p class="attendanceModalTitle">참석 여부를 알려주세요.</p>
+          <div class="momAndDadCheckContainer">
+            <div class="momAndDadCheck" id="dadCheck">
+              <input type="checkbox" class="attendanceModalCheckBox">
+              <label>아빠측</label>
+            </div>
+            <div class="momAndDadCheck" id="momCheck">
+              <input type="checkbox" class="attendanceModalCheckBox">
+              <label>엄마측</label>
+            </div>
+          </div>
+          <div class="attendanceModalEntered">
+            <ul class="attendanceModalEnteredList">
+              <li>
+                <input type="text" placeholder="이름" class="attendanceModalEnteredListInput">
+              </li>
+              <li>
+                <input type="text" placeholder="연락처" class="attendanceModalEnteredListInput">
+              </li>
+              <li>
+                <select class="attendanceModalEnteredListSelect">
+                  <option value="" disabled="" selected="">참석 여부</option>
+                  <option value="1">O</option>
+                  <option value="2">X</option>
+                </select>
+              </li>
+              <li>
+                <select class="attendanceModalEnteredListSelect">
+                  <option value="" disabled="" selected="">인원</option>
+                  <option value="0">0명</option>
+                  <option value="1">1명</option>
+                  <option value="2">2명</option>
+                  <option value="3">3명</option>
+                  <option value="4">4명</option>
+                  <option value="5">5명</option>
+                  <option value="6">6명</option>
+                  <option value="7">7명</option>
+                  <option value="8">8명</option>
+                  <option value="9">9명</option>
+                  <option value="10">10명</option>
+                </select>
+              </li>
+              <li>
+                <select class="attendanceModalEnteredListSelect">
+                  <option value="" disabled="" selected="">식사여부</option>
+                  <option value="1">O</option>
+                  <option value="2">X</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+          <div class="personalInformation">
+            <p>개인정보 수집 및 이용 동의 (필수)</p>
+            <div class="personalInformationContent">
+              참석 여부 전달을 위한 개인정보 수집 및 이용에 동의해 주세요.<br>
+              항목 : 성함, 연락처 | 보유 기간 : 초대장 이용 종료 시까지
+            </div>
+            <div class="personalInformationCheck">
+              <input type="checkbox" class="attendanceModalCheckBox">
+              <label>정보 수집에 동의합니다.</label>
+            </div>
+          </div>
+          <div class="attendanceModalBtn">
+            <button onclick="insAttend()">등록하기</button>
+            <button class="attendanceModalCloseBtnBottom">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 공유버튼 -->
+    <div class="share">
+      <div class="shareBtn" id="copyLinkBtn">
+        <div class="shareBtnCircle">
+          <img src="assets/linkShareBtn.png">
+        </div>
+        <div class="shareBtnText">링크 복사</div>
+      </div>
+      <div class="shareBtn" id="kakaoShareBtn">
+        <div class="shareBtnCircle">
+          <img src="assets/kakaoShareBtn.png">
+        </div>
+        <div class="shareBtnText">카카오톡 공유</div>
+      </div>
+    </div>
+
+    <script src="assets/mobileInvitation.js"></script>
+    <script type="text/javascript" src="assets/sdk.js"></script><script charset="UTF-8" src="assets/kakao.js"></script><script charset="UTF-8" src="assets/services.js"></script>
+    <script charset="UTF-8" src="assets/kakao(1).js"></script>
+    <script charset="UTF-8" src="assets/services.js"></script>
+    <script src="assets/kakao(2).js"></script>
+    <iframe id="DIDFrame" src="assets/myBirthdayDID.html" style="position: absolute;left: -9999px; visibility: visible; width:1920px; height:1080px"></iframe>
+    <iframe id="DIDFrame_R" src="assets/saved_resource.html" style="position: absolute;left: -9999px; visibility: visible; width:1920px; height:1080px"></iframe>
+  
+
+</body></html>
