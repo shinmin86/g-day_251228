@@ -1,0 +1,27 @@
+[
+  {
+    "date": "2024-05-19",
+    "title": "처음 만난 날",
+    "img": "assets/img/timeline/2024-05-19.png"
+  },
+  {
+    "date": "2024-12-28",
+    "title": "세상에 태어난 날",
+    "img": "assets/img/timeline/2024-12-28.png"
+  },
+  {
+    "date": "2025-02-15",
+    "title": "50일",
+    "img": "assets/img/timeline/2025-02-15.png"
+  },
+  {
+    "date": "2025-04-06",
+    "title": "100일",
+    "img": "assets/img/timeline/2025-04-06.png"
+  },
+  {
+    "date": "2025-07-15",
+    "title": "200일",
+    "img": "assets/img/timeline/2025-07-15.png"
+  }
+]
