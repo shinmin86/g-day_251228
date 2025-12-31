@@ -1,120 +1,668 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>초대장</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-  <main class="page">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
-    <section class="hero">
-      <div class="hero__bg" style="background-image:url('./assets/hero.jpg')"></div>
-      <div class="hero__shade"></div>
-      <div class="hero__content">
-        <h1 class="hero__title">첫 생일에 초대합니다</h1>
-        <p class="hero__desc">
-          소중한 날, 함께 축하해 주세요.
+    <meta property="og:image" content="https://g-day.co.kr/kr/mobile/popup/data/tmpimg/MAIN/202511/1763647824408.webp">
+    <meta property="og:title" content="송서빈">
+    <meta property="og:description" content="사랑스런 송서빈의 첫 돌잔치에 초대합니다.">
+    <link
+      href="https://hangeul.pstatic.net/hangeul_static/css/NanumHimNaeRaNeunMarBoDan.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://g-day.co.kr/kr/test/css/myBirthday.css" />
+
+    <title>G-DAY</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+  </head>
+
+  <body class="loading">
+    <!-- 배경음악 -->
+    <div class="backGroundMusic" id="musicToggle">
+      <div class="bgmIcon">
+        <img src="https://g-day.co.kr/kr/test/src/common/musicPlayBtn.png" id="musicIcon" />
+        <audio
+          id="audioOne"
+          src="https://g-day.co.kr/kr/test/src/music/02 - The Story (Instrumental).mp3"
+          preload="auto"
+          autoplay
+        ></audio>
+      </div>
+    </div>
+
+    <!-- 메인 -->
+    <div class="invitationMain">
+      <div class="mainCover">
+        <img src="https://g-day.co.kr/kr/test/src/myBirthday/mainBG.png" />
+      </div>
+      <div class="mainPhoto">
+        <img src="" />
+      </div>
+      <div class="mainText">
+        <p class="babyName"></p>
+        <p class="date">
+          <span class="calendar"></span><span class="day">  </span
+          ><span class="time"></span>
         </p>
-        <p class="hero__hosts">아빠 홍길동 · 엄마 김철수</p>
-        <button class="btn btn--primary" id="btnContacts">연락하기</button>
+        <p class="placeName"></p>
+        <p class="hallName"></p>
+        <p class="parentsName">
+          <span class="fathter"></span> <span class="dot1">·</span>
+          <span class="mother"></span>
+        </p>
       </div>
-    </section>
+    </div>
 
-    <div class="modal" id="contactsModal" aria-hidden="true">
-      <div class="modal__backdrop" data-close></div>
-      <div class="modal__panel">
-        <div class="modal__header">
-          <h2>연락하기</h2>
-          <button class="iconbtn" data-close aria-label="닫기">×</button>
+    <!-- 인사말 -->
+    <div class="greeting">
+      <div class="greetingTitle">
+        <p>지데이의 첫번째 생일에 초대합니다.</p>
+      </div>
+      <div class="greetingPhoto">
+        <img src="https://g-day.co.kr/kr/test/src/myBirthday/greetingPhoto.png" />
+      </div>
+      <div class="greetingText">
+        <p class="greetingBodyContent">
+          부모라는 이름을 선물하고 큰 사랑과 감사를 가르쳐준 우리 아이가 드디어
+          첫 생일을 맞이하였습니다. 그 동안 사랑을 베풀어 주신 모든 분들께
+          감사의 마음을 전하기 위해 조촐한 자리를 마련하였습니다. 바쁘시더라도
+          참석해 주시면 큰 기쁜이 되겠습니다.
+        </p>
+        <div class="hyphen"><hr /></div>
+        <div class="parentsNameTwo">
+          <span class="fathter">아빠 이성현</span> <span class="dot1">·</span>
+          <span class="mother">엄마 윤지은</span>
         </div>
+      </div>
+      <div class="callBtn">
+        <!-- <button><img src="https://g-day.co.kr/kr/test/src/myBirthday/callBtn.png" /></button> -->
+        <button id="callBtnCall">연락하기</button>
+      </div>
+    </div>
 
-        <div class="contactCard">
-          <div>
-            <div class="contactCard__label">아빠</div>
-            <div class="contactCard__name">홍길동</div>
-          </div>
-          <a class="btn btn--ghost" id="dadCall" href="#">전화</a>
+    <!-- 연락하기 모달 -->
+    <div class="callBtnModalOverlay" id="callBtnModalOverlay">
+      <div class="callBtnModal">
+        <div class="momAndDadCallDeleteBtn">
+          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
         </div>
-
-        <div class="contactCard">
-          <div>
-            <div class="contactCard__label">엄마</div>
-            <div class="contactCard__name">김철수</div>
+        <div class="momAndDadCall">
+          <div class="momCallInformation">
+            <p class="momOrDad">아빠</p>
+            <p class="momoOrDadName">아빠 이름</p>
+            <div class="CallNumber">
+              <button onclick="makeCall(f_num, '아빠')">
+                연락하기
+              </button>
+            </div>
           </div>
-          <a class="btn btn--ghost" id="momCall" href="#">전화</a>
+          <div class="momCallInformation">
+            <p class="momOrDad">엄마</p>
+            <p class="momoOrDadName">엄마 이름</p>
+            <div class="CallNumber">
+              <button onclick="makeCall(m_num, '엄마')">
+                연락하기
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <section class="section">
-      <h2 class="section__title">행사 안내</h2>
-      <div class="card">
-        <div class="kv">
-          <div class="kv__row">
-            <div class="kv__k">일시</div>
-            <div class="kv__v">2026.01.10 (토) 오후 12:00</div>
+    <!-- 돌잔치 일정 -->
+    <div class="schedule">
+      <div class="scheduleTitle">
+        <p>돌잔치 안내</p>
+      </div>
+      <div class="scheduleDate">
+        <p class="date">
+          <span class="calendar">2025.07.24</span>
+          <span class="day">(토)</span>
+          <span class="time">오후 12:00</span>
+        </p>
+        <p class="placeName">지데이 호텔</p>
+        <div class="hyphen"><hr /></div>
+      </div>
+      <div class="scheduleCalendar">
+        <div class="scheduleCalendar">
+          <div id="calendarHeader"></div>
+          <div class="calendarDays">
+            <div class="day red">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
           </div>
-          <div class="kv__row">
-            <div class="kv__k">장소</div>
-            <div class="kv__v">○○파티홀</div>
-          </div>
-          <div class="kv__row">
-            <div class="kv__k">주소</div>
-            <div class="kv__v">서울 ○○구 ○○로 00</div>
-          </div>
+          <div class="calendarDates" id="calendarDates"></div>
         </div>
       </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section__title">갤러리</h2>
-      <div class="galleryGrid" id="galleryGrid"></div>
-    </section>
-
-    <div class="viewer" id="viewer" aria-hidden="true">
-      <div class="viewer__backdrop" data-close></div>
-      <div class="viewer__panel">
-        <button class="iconbtn viewer__close" data-close aria-label="닫기">×</button>
-        <button class="navbtn navbtn--prev" id="prevBtn" aria-label="이전">❮</button>
-        <img class="viewer__img" id="viewerImg" alt="">
-        <button class="navbtn navbtn--next" id="nextBtn" aria-label="다음">❯</button>
-        <div class="viewer__counter"><span id="viewerIndex">1</span> / <span id="viewerTotal">1</span></div>
+      <div class="dDay">
+        <p>
+          <span id="">지데이</span><span class="day red">♥</span>의 첫번째 생일이
+          <span id="" class="day red">2일</span> 남았습니다.
+        </p>
       </div>
     </div>
 
-    <section class="section">
-      <h2 class="section__title">오시는 길</h2>
-      <div class="card">
-        <p class="muted">아래 버튼으로 지도 앱을 열 수 있습니다.</p>
-        <div class="rowButtons">
-          <a class="btn btn--ghost" target="_blank" rel="noopener"
-             href="https://map.kakao.com/">카카오맵</a>
-          <a class="btn btn--ghost" target="_blank" rel="noopener"
-             href="https://www.tmap.co.kr/">티맵</a>
+    <!-- 성장일기 -->
+    <div class="timeLine">
+      <div class="timeLineTitle">
+        <p>성장일기</p>
+      </div>
+      <div class="timeLineContainer">
+        <div class="timeLineLine"></div>
+
+        <div class="timeLineItem left"  style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/myBirthday/timeLine01.png" />
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate">2023.10.04</p>
+            <p class="timeLinetextTitle">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right"  style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate">2024.07.04</p>
+            <p class="timeLinetextTitle">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/myBirthday/timeLine02.png" />
+          </div>
+        </div>
+        
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+          </div>
+        </div>
+    
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
+        </div>
+
+        <div class="timeLineItem right" style="display: none;">
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date2">2024.07.04</p>
+            <p class="timeLinetextTitle" id="subject2">세상에 태어난 날</p>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine02.png" id="photo2"/>
+          </div>
+        </div>
+
+        <div class="timeLineItem left" style="display: none;">
+          <div class="timeLinePhoto">
+            <img src="https://g-day.co.kr/kr/test/src/star/timeLine01.png" id="photo1"/>
+          </div>
+          <div class="timeLineDot"></div>
+          <div class="timeLinetext">
+            <p class="timeLinetextDate" id="date1">2023.10.04</p>
+            <p class="timeLinetextTitle" id="subject1">처음 만난 날</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="section">
-      <h2 class="section__title">마음 전하실 곳</h2>
-      <div class="card accountCard">
-        <div>
-          <div class="accountCard__label">계좌</div>
-          <div class="accountCard__num" id="acc1">국민 000-0000-0000 (홍길동)</div>
-        </div>
-        <button class="btn btn--ghost" data-copy="#acc1">복사</button>
+    <!-- 갤러리 -->
+    <div class="gallery">
+      <div class="galleryTitle">
+        <p>갤러리</p>
       </div>
-    </section>
+      <ul class="galleryPhotos">
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos01.png" data-index="0" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos02.png" data-index="1" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos03.png" data-index="2" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos04.png" data-index="3" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos05.png" data-index="4" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos06.png" data-index="5" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos04.png" data-index="3" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos05.png" data-index="4" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos06.png" data-index="5" />
+        </li>
+                <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos04.png" data-index="3" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos05.png" data-index="4" />
+        </li>
+        <li>
+          <img src="https://g-day.co.kr/kr/test/src/myBirthday/galleryPhotos06.png" data-index="5" />
+        </li>
+      </ul>
 
-    <section class="sharebar">
-      <button class="btn btn--ghost" id="btnCopyLink">링크 복사</button>
-    </section>
+      <div class="imageModal" id="imageModal">
+        <span class="closeBtn" id="closeBtn">&times;</span>
+        <div class="modalImageWrapper">
+          <img id="modalImage" src="" />
+        </div>
+        <div class="nav prev" id="prevBtn">&#10094;</div>
+        <div class="nav next" id="nextBtn">&#10095;</div>
+        <div class="imageCounter" id="imageCounter">1 / 3</div>
+      </div>
+    </div>
 
-    <footer class="footer">© Invitation</footer>
-  </main>
+    <!-- 오시는 길 -->
+    <div class="location">
+      <div class="locationTitle">
+        <p>오시는 길</p>
+      </div>
 
-  <script src="./app.js"></script>
-</body>
+      <div id="map" style="width: 100%; height: 300px"></div>
+
+      <div class="locationBtn">
+        <ul class="locationBtnApp">
+          <li><img src="https://g-day.co.kr/kr/test/src/common/naverMap.png" onclick="openNaverMap()"/> 지도</li>
+          <li><img src="https://g-day.co.kr/kr/test/src/common/kakaomap.png" onclick="openKakaoMap()"/> 카카오 맵</li>
+          <li><img src="https://g-day.co.kr/kr/test/src/common/tMAp.png" onclick="openTmap()"/> 티맵</li>
+        </ul>
+      </div>
+      <div class="locationDetail">
+        <pre>
+          주소
+          000시 000로 000
+
+          자가용 이용시
+          계양 IC이용
+
+          버스 이용시
+          00번 - 00000하차
+          000번 - 00000 하차 10분 도보
+
+          지하철 이용시
+          000호선 0000역 0번 출구
+        </pre>
+      </div>
+    </div>
+
+    <!-- 방명록 -->
+    <div class="guestBook">
+      <div class="guestBookTitle">
+        <p>지데이의 생일을 축하해주세요!</p>
+      </div>
+      <div class="guestBookContent">
+        <div class="guestBookContentText">
+          <p class="guestBookContentTextfrom">
+            From.<span id="fromWho">할머니</span>
+          </p>
+          <p class="guestBookContentTextfromWhoText">
+            지데이야 첫 생일을 축하해!
+          </p>
+        </div>
+        <div class="guestBookContentBtn">
+          <ul class="guestBookContentBtnList">
+            <li><img src="https://g-day.co.kr/kr/test/src/common/editBtn.png" /></li>
+            <li><img src="https://g-day.co.kr/kr/test/src/common/deleteBtn.png" /></li>
+          </ul>
+        </div>
+      </div>
+      <div class="guestBookBtn">
+        <button class="guestBookBtnWrite">작성하기</button>
+        <button class="guestBookBtnMore">전체보기</button>
+      </div>
+    </div>
+
+    <!-- 방명록 전체보기 -->
+    <div id="guestBookAllModal" class="guestBookAllModal" style="display: none">
+      <div class="guestBookAllModalContent">
+        <div class="guestBookAllModalCloseBtn">
+          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
+        </div>
+        <div class="guestBookAllContentsContainer">
+          <!-- 여기에 모든 guestBookContent 복사해서 보여줌 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 방명록 작성하기 -->
+    <div class="guestBookModalOverlay" id="guestBookModalOverlay">
+      <div class="guestBookWrite" id="guestBookWrite">
+        <div class="guestBookDeleteBtn">
+          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
+        </div>
+        <div class="guestBookWriteCotents">
+          <div class="guestBookWriter">
+            <p>작성자</p>
+            <input type="hidden" name = "msg_idx" />
+            <input type="text" name="name" required />
+          </div>
+          <div class="guestBookPassword">
+            <p>비밀번호</p>
+            <input
+              type="password"
+              name="password"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+              maxlength="4"
+              minlength="4"
+              placeholder="숫자 네자리 입력"
+              min="4"
+              max="4"
+              required
+            />
+          </div>
+          <div class="guestBookbody">
+            <p>내용</p>
+            <textarea name="textarea" rows="10" cols="50" required placeholder="이모티콘은 적용이 안됩니다."></textarea>
+          </div>
+          <div class="guestBookWriteBtn">
+            <button>작성하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 방명록 작성하기 -->
+
+    <!-- 계좌번호 -->
+    <div class="account">
+      <div class="accountTitle">
+        <p>마음 전하실 곳</p>
+      </div>
+      <div class="accountText">
+        멀리서도 축하의 마음을 전하고 싶으신 분들을 위해 계좌번호를
+        안내드립니다. 소중한 축하를 보내주셔서 감사드리며, 따뜻한 마음에 깊이
+        감사드립니다.
+      </div>
+      <div class="accountContent">
+        <div class="accountContentText">
+          <p class="accountContentTextWho">아빠 계좌번호</p>
+          <div class="accountContentTextToggle">
+            <p class="accountContentTextName">아빠이름</p>
+            <p class="accountContentTextNumber" id="accountNumber">
+              국민 000-00000-0000000
+            </p>
+            <button class="accountContentBtn">계좌 복사하기</button>
+          </div>
+        </div>
+        <div class="openAndClose">
+          <button><img src="https://g-day.co.kr/kr/test/src/common/accountArrow.png" /></button>
+        </div>
+      </div>
+      <div class="accountContent">
+        <div class="accountContentText">
+          <p class="accountContentTextWho">엄마 계좌번호</p>
+          <div class="accountContentTextToggle">
+            <p class="accountContentTextName">엄마이름</p>
+            <p class="accountContentTextNumber" id="accountNumber">
+              국민 000-00000-0000000
+            </p>
+            <button class="accountContentBtn">계좌 복사하기</button>
+          </div>
+        </div>
+        <div class="openAndClose">
+          <button><img src="https://g-day.co.kr/kr/test/src/common/accountArrow.png" /></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 참석 여부 -->
+    <div class="attendance">
+      <div class="attendanceTitle">
+        <p>참석 의사 전달</p>
+      </div>
+      <div class="attendanceText">
+        돌잔치에 참석해주시는 모든 분들을 더욱 특별하게 모시고자 하오니, 참석
+        여부 전달을 부탁드립니다.
+      </div>
+      <div class="attendanceBtn">
+        <button class="attendanceBtndelivery">전달하기</button>
+      </div>
+    </div>
+
+    <!-- 참석여부 팝업 -->
+    <div class="attendanceModalOverlay" id="attendanceModalOverlay">
+      <div class="attendanceModal">
+        <div class="attendanceModalCloseBtn">
+          <img src="https://g-day.co.kr/kr/test/src/common/guestBookWriteDelete.png" />
+        </div>
+        <div class="attendanceModalContents">
+          <p class="attendanceModalTitle">참석 여부를 알려주세요.</p>
+          <div class="momAndDadCheckContainer">
+            <div class="momAndDadCheck" id="dadCheck">
+              <input type="checkbox" class="attendanceModalCheckBox" />
+              <label>아빠측</label>
+            </div>
+            <div class="momAndDadCheck" id="momCheck">
+              <input type="checkbox" class="attendanceModalCheckBox" />
+              <label>엄마측</label>
+            </div>
+          </div>
+          <div class="attendanceModalEntered">
+            <ul class="attendanceModalEnteredList">
+              <li>
+                <input
+                  type="text"
+                  placeholder="이름"
+                  class="attendanceModalEnteredListInput"
+                />
+              </li>
+              <li>
+                <input
+                  type="text"
+                  placeholder="연락처"
+                  class="attendanceModalEnteredListInput"
+                />
+              </li>
+              <li>
+                <select class="attendanceModalEnteredListSelect">
+                  <option value="" disabled selected>참석 여부</option>
+                  <option value="1">O</option>
+                  <option value="2">X</option>
+                </select>
+              </li>
+              <li>
+                <select class="attendanceModalEnteredListSelect">
+                  <option value="" disabled selected>인원</option>
+                  <option value="0">0명</option>
+                  <option value="1">1명</option>
+                  <option value="2">2명</option>
+                  <option value="3">3명</option>
+                  <option value="4">4명</option>
+                  <option value="5">5명</option>
+                  <option value="6">6명</option>
+                  <option value="7">7명</option>
+                  <option value="8">8명</option>
+                  <option value="9">9명</option>
+                  <option value="10">10명</option>
+                </select>
+              </li>
+              <li>
+                <select class="attendanceModalEnteredListSelect">
+                  <option value="" disabled selected>식사여부</option>
+                  <option value="1">O</option>
+                  <option value="2">X</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+          <div class="personalInformation">
+            <p>개인정보 수집 및 이용 동의 (필수)</p>
+            <div class="personalInformationContent">
+              참석 여부 전달을 위한 개인정보 수집 및 이용에 동의해 주세요.<br />
+              항목 : 성함, 연락처 | 보유 기간 : 초대장 이용 종료 시까지
+            </div>
+            <div class="personalInformationCheck">
+              <input type="checkbox" class="attendanceModalCheckBox" />
+              <label>정보 수집에 동의합니다.</label>
+            </div>
+          </div>
+          <div class="attendanceModalBtn">
+            <button onclick="insAttend()">등록하기</button>
+            <button class="attendanceModalCloseBtnBottom">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 공유버튼 -->
+    <div class="share">
+      <div class="shareBtn" id="copyLinkBtn">
+        <div class="shareBtnCircle">
+          <img src="https://g-day.co.kr/kr/test/src/common/linkShareBtn.png" />
+        </div>
+        <div class="shareBtnText">링크 복사</div>
+      </div>
+      <div class="shareBtn" id="kakaoShareBtn">
+        <div class="shareBtnCircle">
+          <img src="https://g-day.co.kr/kr/test/src/common/kakaoShareBtn.png" />
+        </div>
+        <div class="shareBtnText">카카오톡 공유</div>
+      </div>
+    </div>
+
+    <script src="https://g-day.co.kr/kr/test/js/mobileInvitation.js?id=226"></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5c75410e0e94618049d381d090a204bf&amp;libraries=services"
+    ></script>
+    <script
+      charset="UTF-8"
+      src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.19/kakao.js"
+    ></script>
+    <script
+      charset="UTF-8"
+      src="https://t1.daumcdn.net/mapjsapi/js/libs/services/1.0.2/services.js"
+    ></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <iframe id="DIDFrame" src="" style="position: absolute;left: -9999px; visibility: visible; width:1920px; height:1080px"></iframe>
+    <iframe id="DIDFrame_R" src="" style="position: absolute;left: -9999px; visibility: visible; width:1920px; height:1080px"></iframe>
+  </body>
 </html>
